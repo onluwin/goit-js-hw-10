@@ -13,7 +13,7 @@ export function fetchCountries(name) {
     }).catch(error => console.log)
 }
 
-export function onFetchSuccess(data) {
+export function onFetchSuccess(data, markup) {
     markup = createMarkup(data)
     addMarkupToPage(markup)
 }

@@ -16,7 +16,7 @@ function onCountryInput(e) {
         return;
     }
     let markup = ''
-    fetchCountries(query).then(onFetchSuccess);
+    fetchCountries(query).then(data => onFetchSuccess(data, markup));
 }
 
 const debouncedOnCountryInput = debounce(onCountryInput, DEBOUNCE_DELAY)
