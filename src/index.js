@@ -19,6 +19,7 @@ function onCountryInput(e) {
 }
 
 function onFetchSuccess(data, markup) {
+    // console.log(data);
     markup = createMarkup(data)
     addMarkupToPage(markup)
 }

@@ -8,6 +8,7 @@ export function createMarkup(data) {
     if (!data.length) {
         Notify.failure("Oops, there is no country with that name")
         resetMarkup()
+        return ''
     }
 
     if (data.length === 1) {
