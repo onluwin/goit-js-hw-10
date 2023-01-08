@@ -4,12 +4,12 @@ import { refs } from "./refs"
 export function createMarkup(data) {
     let markup = '';
 
-    if (!countData(data)) {
+    if (!data.length) {
         Notify.failure("Oops, there is no country with that name")
         resetMarkup()
     }
 
-    if (countData(data) === 1) {
+    if (data.length === 1) {
         data.map(item => {
 
             let languages = ''
@@ -22,7 +22,7 @@ export function createMarkup(data) {
         })
         return markup
     }
-    if (countData(data) > 9) {
+    if (data.length > 9) {
         Notify.info("Too many matches found. Please enter a more specific name.")
         return ''
     }
@@ -34,10 +34,6 @@ export function createMarkup(data) {
       </li>`
     })
     return markup
-}
-
-function countData(data) {
-    return data.length
 }
 
 export function resetMarkup() {

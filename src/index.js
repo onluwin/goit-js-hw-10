@@ -1,8 +1,8 @@
 import '../css/styles.css';
 import debounce from 'lodash.debounce';
-import { fetchCountries, onFetchSuccess } from '../js/fetchCountries';
-import { refs } from '../js/refs'
-import { createMarkup, resetMarkup, addMarkupToPage } from '../js/createMarkup';
+import { fetchCountries } from './js/fetchCountries';
+import { refs } from './js/refs'
+import { createMarkup, resetMarkup, addMarkupToPage } from './js/createMarkup';
 import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix';
 
@@ -16,6 +16,11 @@ function onCountryInput(e) {
     }
     let markup = ''
     fetchCountries(query).then(data => onFetchSuccess(data, markup));
+}
+
+function onFetchSuccess(data, markup) {
+    markup = createMarkup(data)
+    addMarkupToPage(markup)
 }
 
 const debouncedOnCountryInput = debounce(onCountryInput, DEBOUNCE_DELAY)
