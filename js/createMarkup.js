@@ -34,3 +34,11 @@ export function createMarkup(data) {
 function countData(data) {
     return data.length
 }
+
+export function resetMarkup() {
+    refs.countryList.innerHTML = '';
+}
+
+export function addMarkupToPage(markup) {
+    refs.countryList.innerHTML = markup;
+}
