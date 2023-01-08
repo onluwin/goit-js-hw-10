@@ -2,6 +2,7 @@ import { Notify } from "notiflix"
 import { refs } from "./refs"
 
 export function createMarkup(data) {
+    console.log(data);
     let markup = '';
 
     if (!data.length) {
