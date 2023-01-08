@@ -4,6 +4,11 @@ import { refs } from "./refs"
 export function createMarkup(data) {
     let markup = '';
 
+    if (!countData(data)) {
+        Notify.failure("Oops, there is no country with that name")
+        resetMarkup()
+    }
+
     if (countData(data) === 1) {
         data.map(item => {
 

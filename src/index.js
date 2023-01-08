@@ -11,7 +11,6 @@ const DEBOUNCE_DELAY = 300;
 function onCountryInput(e) {
     let query = e.target.value.trim().toLowerCase()
     if (query === '') {
-        Notify.failure('Oops, there is no country with that name.')
         resetMarkup()
         return;
     }
