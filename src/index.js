@@ -4,7 +4,6 @@ import { fetchCountries } from './js/fetchCountries';
 import { refs } from './js/refs'
 import { createMarkup, resetMarkup, addMarkupToPage } from './js/createMarkup';
 import debounce from 'lodash.debounce';
-import { Notify } from 'notiflix';
 
 const DEBOUNCE_DELAY = 300;
 
